@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Content</title>
+<!--@import url('//maxcdn.bootstrap.com/font-awesome/4.7.0/css/font-awesome.min.css')-->
+
+    <style>
+        div{background-color:violet;
+        border:2px solid black;
+        border-radius:30px;
+        padding:20px;
+        color:white;
+        margin:100px;
+        }
+        body{background-color:blue;}
+    </style>
+</head>
+<body>
+{% for post in post %}
+<div>
+<h1>{{post.2}}</h1>
+<h1>{{post.5}}</h1>
+<p>{{post.3}}</p>
+<p> By {{post.4}}</p>
+<p>{{post.6}}</p>
+</div>
+{% endfor %}
+</body>
+</html>

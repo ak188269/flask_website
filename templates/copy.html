@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  {% for post in post %}
+<form action="/edit/" method="POST">
+       <div>
+    id:<input type="text" name="id"  placeholder="enter id here" value="{{post.0}}">
+</div>
+
+<div>
+    title:<textarea name="title" id="txt" cols="9" rows="3" placeholder=" here title here" >{{post.5}}</textarea>
+</div>
+
+
+<div>
+    content:<textarea name="content" id="tx" cols="9" rows="3" placeholder="enter content here">{{post.3}}</textarea>
+</div>
+      <div>
+    slug:<input type="text" name="slug" value="{{post.2}}">
+</div>
+     <div>
+    creator:<input type="text" name="creator" value="{{post.4}}">
+</div>
+    <input type="submit" value="submmit">
+</form>
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    #message{
+  color: #4F8A10;
+    background-color: #DFF2BF;
+    font-size:20px;
+    width:800px;
+    margin: 10px auto;
+    }
+    #btn{ cursor:pointer;
+    position:absolute;
+    right:220px;
+    width:20px;
+    height:20px;
+    background-color:green;}
+    #box{
+    padding:70px;}
+</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation_Menu</title>
+    <link rel="stylesheet" href="static/nav.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body style="background-image: url('static/images/blog.jpg');">
+
+    <div class="navigation">
+        <ul class="nav">
+            <li> <i class="fa fa-home" aria-hidden="true"></i><a href="/">Home</a>
+            </li>
+            <li><i class="fa fa-comment" aria-hidden="true"></i><a href="{{input['fb_url']}}">Messege</a></li>
+            <li ><i class="fa fa-id-card-o" aria-hidden="true"></i><a href="#">Services</a></li>
+            <li><i class="fa fa-sign-in" aria-hidden="true"></i><a href="/login">Login</a></li>
+            <li><i class="fa fa-user-circle-o" aria-hidden="true"></i><a href="#">User</a></li>
+            <li><i class="fa fa-info-circle" aria-hidden="true"></i><a href="#">About Us</a></li>
+        </ul>
+    </div>
+    {% with messages=get_flashed_messages() %}
+{% if messages %}
+{% for message in messages%}
+<div class="alert alert-success alert-dismissible fade show" role="alert" id="message">
+  <strong id="box" >
+{{message}}</strong>
+  <button type="button" id="btn" onclick="clos()">&times;</button>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+    <div class="box">
+        <img src="static/images/eye.jpg" alt="">
+        <h1>Welcome To Eye</h1>
+
+        <p id="para"><span>"</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse ullam cumque qui, consectetur placeat sed veritatis sapiente in ad possimus aperiam iure doloremque error harum? Incidunt illo iste inventore fugit maxime quisquam accusamus error. Aspernatur eaque voluptatem odio dolor iure nesciunt asperiores consequuntur quas a. Nemo corrupti error quis ducimus quo, omnis voluptatum odio suscipit, id dicta magni neque ut voluptas amet velit assumenda commodi, sit adipisci ratione. Nesciunt perspiciatis, repellendus exercitationem facere ullam dolorum, vero voluptates quam sequi earum illo porro incidunt vitae saepe. Dolores, asperiores quis dignissimos velit, sunt nostrum laudantium doloribus culpa numquam minima nam, modi debitis aperiam repellat atque quam pariatur ut rerum quo sed molestias distinctio inventore ratione. Magnam ullam ex dolorum soluta quidem, repudiandae voluptatibus iste iure! Laboriosam error distinctio consequatur sequi assumenda, atque delectus, sunt omnis commodi quod porro maiores esse optio sit obcaecati quos voluptas minima id sed perferendis. Impedit magnam, dolorem eveniet laboriosam doloremque provident, obcaecati repellat odit deserunt tempora inventore veritatis dignissimos nisi porro? Labore perferendis officiis fuga, architecto optio tempore laudantium ipsa voluptatibus quam accusantium quibusdam sunt temporibus voluptatum ratione consectetur molestiae magni. Voluptatum facilis repudiandae, possimus accusantium est nisi perspiciatis rem perferendis deleniti nam tempora expedita, aut quasi. <span>,,</span></p>
+    </div>
+    <script>
+        function clos(){
+        let btn=document.getElementById('btn');
+        let message=document.getElementById('message');
+        if( message.style.display!='none'){
+            message.style.display='none';
+        }
+        else{
+        message.style.display='block';
+        }
+        }
+    </script>
+</body>
+</html>

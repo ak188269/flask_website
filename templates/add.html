@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <title>Add</title>
+    <style>
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    /* background-image: radial-gradient(circle at -9.06% 55.17%, #ffd031 0, #ffd91c 10%, #ffe200 20%, #ffea00 30%, #fdf100 40%, #e6f810 50%, #cefe2a 60%, #b3ff3f 70%, #96ff55 80%, #71ff6a 90%, #39ff81 100%); */
+    height: 100vh;
+    
+}
+.container{
+    border: 3px solid red;
+    box-shadow: 5px  5px 5px 5px  black,5px  5px 5px 5px  black;
+    background-image: radial-gradient(circle at -9.06% 55.17%, #0065ff 0, #005eff 10%, #0055ff 20%, #0048ff 30%, #0035ff 40%, #2010f8 50%, #7300e5 60%, #9a00cf 70%, #b600b8 80%, #ca009f 90%, #d80085 100%); 
+    width: 160%;
+    color: white;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 110%;
+    
+}
+input{
+    width:100%;
+}
+    </style>
+</head>
+<body>
+
+{% with messages=get_flashed_messages() %}
+{% if messages %}
+{% for message in messages%}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong><i class="fa fa-check-circle-o" aria-hidden="true"></i>
+{{message}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{% endfor %}
+{% endif %}
+{% endwith %}
+<div class="box">
+<form action="/add" method="POST">
+    <div class="container">
+      
+       <div>
+    Id <br><input type="text" name="id"  placeholder="enter id here" >
+</div>
+
+<div>
+    Title<br> <textarea  style="width: 100%;" name="title" id="txt" cols="9" rows="3" placeholder=" here title here" ></textarea>
+</div>
+<div>
+    Content<br> <textarea style="width: 100%;" name="content" id="tx" cols="9" rows="3" placeholder="enter content here"></textarea>
+</div>
+      <div>
+    Slug<br> <input type="text" name="slug">
+</div>
+     <div>
+    Creator<br><input type="text" name="creator" >
+</div>
+    <button style="margin:4% 10%; margin-top: 5%; background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(31,97,233,0.8860586470916492) 37%, rgba(0,212,255,1) 100%); color: white; width: 80%;">Add Post</button>
+</form>
+
+</div>
+</div>
+</body>
+</html>

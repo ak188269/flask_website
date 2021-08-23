@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post</title>
+    <style>
+        #div{
+        border-radius:30px;
+        padding:20px;
+        color:white;
+        margin:100px;
+        }
+        body{background-color:yellow;}
+        a{ color:black}
+        .para{
+        margin-left:800px;
+        }
+        h1{margin-left:400px;
+        color:white;}
+        #class{border:2px solid green;}
+        #para{color:white;
+        margin-left:100px;
+        width:1000px;}
+        butt{
+        background-color:blue;
+        color:white;
+        cursor:pointer;
+         margin-left:1000px;
+        padding:10px;}
+        #btn2{position:absolute;
+        right:1000px;
+        }
+        .box{
+        background-color:#D8000C;
+        }
+    </style>
+</head>
+<body>
+
+<div id="class" >
+   <a href="#"> <button>Log Out</button></a>
+<h1 >Welcome To My Blog</h1>
+<p id="para">Hello guys this is avinash and i am learning flask for backend development and i
+    liked this library of python
+    once i learnt this one i will go for either django or php  both of them are
+    also use for backend and are very famous
+    in the developers
+  </p>
+
+{% for post in post %}
+    <div id="div">
+    <a href="/{{post.2}}">{{post.5.upper()}}</a>
+<!--        (post.0 ko post[0] aise bhi likh skte hai ye string hai .
+isliye string function jaise slicing upper ,lower,capitalize ispar laga skte hai-->
+        <p>{{post.3[0:400]}}</p>
+        <p class="para">By {{post.4}}</p>
+        <p class="para">{{post.6}}</p>
+        </div>
+
+{% endfor %}
+    </div>
+<a href={{prev}}><button id="btn2">&larr;Previous</button> </a>
+<a href={{next}}><button class="btn2">Next &rarr;</button> </a>
+</body>
+</html>

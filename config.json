@@ -1,0 +1,16 @@
+{
+  "config":{
+    "local_server":"True",
+    "user_uri": "root",
+    "password_uri":"",
+    "host_uri":"localhost",
+    "db_uri": "database_name",
+    "fb_url": "https://www.facebook.com/profile.php?id=100004266918324",
+    "tw_url": "https://www.twitter.com/Avinash04043143",
+    "username": "user@gmail.com",
+    "password": "user_password"
+
+
+  }
+}
+
